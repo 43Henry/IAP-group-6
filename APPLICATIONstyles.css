@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding:0;
+    line-height: 0.5;
+    font-family: sans-serif;
+    box-sizing:border-box;
+}
+body{
+    justify-content: center;
+    height: 100vh;
+    padding:10px;
+    align-items: center;
+}
+header{
+	background-color:rgb(23, 136, 61);
+	padding: 50px;
+	box-shadow: 20px 15px 15px Gray;
+}
+header li img{
+	width: 250px;
+	float: left;
+	margin-top: -20px;
+}
+header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header ul li{
+	float: left;
+	width: 200px;
+	height: 40px;
+	background-color:rgb(23, 136, 61);
+	opacity:  .9;
+	line-height: 40px;
+	text-align: center;
+
+}
+header ul li a{
+	color:AntiqueWhite;
+	text-decoration: none;
+	padding: 13px;
+	transition:  .3s ease;
+}
+header ul li a:hover{
+	background-color: Tan;
+}
+header ul li ul li{
+	display: none;
+}
+header ul li:hover ul li{
+	display: block;
+}
+header ul #contact a{
+	color: #fff;
+	background-color: Tan;
+	border-radius:20px;
+	float: right;
+	position: relative;
+	top: -15px;
+	transition:  .3s ease;
+}
+header ul #contact a:hover{
+	background-color:BlanchedAlmond ; 
+}
+.container{
+    max-width: 700px;
+    width:100%;
+    padding:25px 30px;
+    border-radius:25px;
+    background-color:rgb(23, 136, 61);
+}
+.container .heading{
+    font-size:25px;
+    font-weight:500;
+    position:relative;
+    text-align: center;
+    padding:0 0 20px 0;
+}
+.container .heading::before{
+    content: '';
+    position:absolute;
+    height:3px;
+    left:0;
+    bottom:0;
+    width:100%;
+    background-color:rgb(23, 136, 61);
+}
+.container form .card-details{
+    margin-top:25px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
