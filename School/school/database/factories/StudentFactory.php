@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -15,16 +16,16 @@ class StudentFactory extends Factory
      * @return array<string, mixed>
      */
     protected $model = Student::class;
+
     public function definition()
     {
         return 
         [
-            'student_id' => $this->faker->numberBetween(1,10000),
-            'course_name' => $this->faker->name, 'stu_year' => rand(1, 7),
-            'first_name' => $this->faker->firstName,
-            'last_name' => $this->faker->lastName,
-            'stu_marks' => rand(1, 700),
-            'unit_id' => $this->faker->numberBetween(1,1000),
+            'student_id' => '1',
+            'name' => 'Henry', 
+            'course_id' => '31',
+            'student_year' => '2',
+            'unit_marks' => 'hello',
         ];
     }
 }

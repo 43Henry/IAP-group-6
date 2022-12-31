@@ -16,12 +16,10 @@ return new class extends Migration
         Schema::create('student', function (Blueprint $table) 
         {
             $table->id();
-            $table->string('course_name');
-            $table->string('stu_year');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('stu_marks');
-            $table->string('unit_id');
+            $table->string('name');
+            $table->string('course_id');
+            $table->string('student_year');
+            $table->json('unit_marks') -> nullable();
             $table->timestamps();
         });
     }
