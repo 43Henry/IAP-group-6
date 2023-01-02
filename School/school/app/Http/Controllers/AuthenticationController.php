@@ -35,11 +35,12 @@ class AuthenticationController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) 
         {
-            return redirect()->intended('dashboard')
-                         ->withSuccess('You have Successfully loggedin');
+            return redirect()->intended('home')
+                         ->withSuccess('You have Successfully logged in');
         }
         
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return redirect("login")->withSuccess('You have entered invalid credentials');
+        echo "Hello";
     }
  
     public function postRegistration(Request $request)
@@ -58,7 +59,7 @@ class AuthenticationController extends Controller
     {
         if(Auth::check())
         {
-            return view('dashboard');
+            return view('landingPage');
         }
         
         return redirect("login")->withSuccess('Opps! You do not have access');

@@ -30,10 +30,10 @@ Route::get('home', function()
     return view('landingPage');
 });
 
-Route::get('login', function()
-{
-    return view('login');
-});
+// Route::get('login', function()
+// {
+//     return view('login');
+// });
 
 Route::get('add-employee', function()
 {
@@ -54,5 +54,6 @@ Route::get('view-work', function()
 {
     return view('view_work');
 });
-//Route::get('login', [AuthenticationController::class, 'index']) -> name('login');
+Route::get('login', [AuthenticationController::class, 'index']) -> name('login');
+Route::post('post-login', [AuthenticationController::class, 'postLogin'])->name('login.post'); 
 //Route::get('student', [StudentController::class, 'index']);
