@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AuthenticationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,15 @@ Route::get('/', function ()
 });
 
 Route::get('student', [StudentController::class, 'index']);
+
+Route::get('home', function()
+{
+    return view('LANDING-PAGE');
+});
+
+Route::get('loginTrial', function()
+{
+    return view('loginTrial');
+});
+
+Route::get('login', [AuthenticationController::class, 'index']);
