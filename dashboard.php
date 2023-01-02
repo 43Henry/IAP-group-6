@@ -13,8 +13,8 @@ $total_emp = mysqli_fetch_row($select_employee);
 $work_employee = mysqli_query($conn,"select count(*) from user_work_report");
 $total_work_emp = mysqli_fetch_row($work_employee);
 
-$Announcements = mysqli_query($conn,"select count(*) from announcement_details where status=0");
-$Total_announcements = mysqli_fetch_row($Announcemets);
+$Announcements = mysqli_query($conn,"select count(*) from Announcements where status=0");
+$Total_announcements = mysqli_fetch_row($name);
 
 ?>
 <?php include('include/header.php'); ?>
@@ -98,7 +98,7 @@ $Total_announcements = mysqli_fetch_row($Announcemets);
             <div class="summary">
               <h4 class="title">Total Announcements</h4>
               <div class="info">
-                <strong class="announcement"><?php echo $Announcements[0]; ?></strong><br>
+                <strong class="announcement"><?php echo $name[0]; ?></strong><br>
                  
               </div>
             </div>
