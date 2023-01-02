@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AuthenticationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,41 +32,4 @@ Route::get('loginTrial', function()
     return view('loginTrial');
 });
 
-Route::post('logincheck', function()
-{
-    //username and password validation rule
-    $rules = array(
-        'username' => 'required',
-        'password' => 'required',
-    );
-    $v = Validator::make(Input::all (), $rules);
-    if($v -> fails())
-    {
-        //username or password missing
-        //validation fails
-        //used to retain input values
-        Input::flash();
-        //return to login page with errors
-        return Redirect::to('loginTrial')
-        ->withInput()
-        ->withErrors($v->messages ());
-    } 
-    else
-    {
-        $userdata = array(
-            'username' => Input::get('username'),
-            'password' => Input::get('password')
-        );
-        If(Auth::attempt($userdata))
-        {
-            //authentication success, enters home page
-            return Redirect::to('home');
-        }
-        else
-        {
-            //authentication fail, back to login page with errors
-            return Redirect::to('loginTrial')
-            ->withErrors('Incorrect login details');
-        }
-    }
-});
+Route::get('login', [AuthenticationController::class, 'index']);
