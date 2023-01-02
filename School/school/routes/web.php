@@ -17,19 +17,42 @@ use App\Http\Controllers\AuthenticationController;
 
 Route::get('/', function () 
 {
-    return view('welcome');
+    return view('landingPage');
 });
 
-Route::get('student', [StudentController::class, 'index']);
+Route::get('application-form', function () 
+{
+    return view('ApplicationForm1');
+});
 
 Route::get('home', function()
 {
-    return view('LANDING-PAGE');
+    return view('landingPage');
 });
 
-Route::get('loginTrial', function()
+Route::get('login', function()
 {
-    return view('loginTrial');
+    return view('login');
 });
 
-Route::get('login', [AuthenticationController::class, 'index']);
+Route::get('add-employee', function()
+{
+    return view('add_employee');
+});
+
+Route::get('index', function()
+{
+    return view('index');
+});
+
+Route::get('view-employee', function()
+{
+    return view('view_employee');
+});
+
+Route::get('view-work', function()
+{
+    return view('view_work');
+});
+//Route::get('login', [AuthenticationController::class, 'index']) -> name('login');
+//Route::get('student', [StudentController::class, 'index']);
